@@ -2,16 +2,15 @@ import Section from './Section';
 import styles from './Location.module.css';
 
 // 카카오맵 "지도 퍼가기"에서 복사한 값들
-const KAKAO_MAP = {
-  lat: 37.5853522,     // ← 위도
-  lng: 126.9967232,    // ← 경도
-  name: '성균관컨벤션 웨딩홀',   // ← 장소명
-  level: 3,         // 지도 확대 레벨 (1~14, 낮을수록 확대)
+
+
+
+const NAVER_MAP = {
+  placeId: '11545666 ',  // ← 네이버 지도 장소 ID로 교체
 };
 
-
-function KakaoMap() {
-  const iframeSrc = `https://map.kakao.com/link/map/${encodeURIComponent(KAKAO_MAP.name)},${KAKAO_MAP.lat},${KAKAO_MAP.lng}`;
+function NaverMap() {
+  const iframeSrc = `https://map.naver.com/p/entry/place/${NAVER_MAP.placeId}?embedMode=true`;
 
   return (
     <iframe
@@ -19,6 +18,7 @@ function KakaoMap() {
       style={{ width: '100%', height: '280px', border: 'none', borderRadius: '12px' }}
       title="웨딩홀 지도"
       loading="lazy"
+      allowFullScreen
     />
   );
 }
