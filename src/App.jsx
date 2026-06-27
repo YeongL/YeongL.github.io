@@ -1,122 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import PetalRain from './components/PetalRain';
+import Hero from './components/Hero';
+import Greeting from './components/Greeting';
+import Countdown from './components/Countdown';
+import Gallery from './components/Gallery';
+import Location from './components/Location';
+import AccountInfo from './components/AccountInfo';
+import Footer from './components/Footer';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+// ====================================================
+// 여기에 실제 정보를 입력하세요
+// ====================================================
+const WEDDING_INFO = {
+  groomName: '김태훈',
+  brideName: '이민영',
+  date: '2026년 10월 18일 일요일 낮 12시 30분',
+  targetDate: '2026-10-18T12:30:00',
+  venue: '성균관 컨벤션 3층 스토리홀',
 
+  greeting: `저희 두 사람이 사랑을 약속하는 자리에
+소중한 분들을 모시고자 합니다.
+
+바쁘신 가운데에도 부디 참석하시어
+축복해 주신다면 더없는 기쁨이 되겠습니다.
+
+김 성주 · 고 현아의 장남  태훈
+이 종국 · 김 옥희의 장녀  민영`,
+
+  venueName: '성균관 컨벤션',
+  address: '서울 종로구 성균관로 31 성균관컨벤션웨딩홀\n성균관 컨벤션 3층 스토리홀',
+  naverMapUrl: 'https://naver.me/IMyAR0V0',  // 실제 URL로 교체
+  kakaoMapUrl: 'https://place.map.kakao.com/913429074',  // 실제 URL로 교체
+
+  transport: [
+    { type: '지하철', desc: '4호선 혜화역 1번 출구 앞에서 마을버스 7번 탑승, 성균관대 정문 하차' },
+    { type: '셔틀버스', desc: '4호선 혜화역 4번 출구 T스토어 앞에서 셔틀버스 운행' },
+    { type: '버스', desc: '간선 100, 102, 104, 107, 140, 143, 150, 151, 160, 162, 171, 172, 272, 301, 710번\n지선 8101, 8111번\n광역 1101, 7101번 ' },
+    { type: '주차', desc: '건물 내 지하주차장 2시간 무료\n(주차권 프론트 수령)' },
+  ],
+
+  accounts: [
+    { relation: '신랑 측', name: '김태훈', bank: '카카오뱅크', account: '3333-01-1234567' },
+    { relation: '신랑 부', name: '김성주', bank: '국민은행', account: '123-456-7890123' },
+    { relation: '신부 측', name: '이민영', bank: '신한은행', account: '110-123-456789' },
+    { relation: '신부 모', name: '이종국', bank: '우리은행', account: '1002-123-456789' },
+  ],
+
+  // 실제 사진 URL 배열 (없으면 플레이스홀더 표시)
+  photos: [
+    // { id: 1, src: '/wedding-invitation/photos/1.jpg', alt: '웨딩 사진 1' },
+  ],
+};
+
+export default function App() {
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <PetalRain count={14} />
 
-      <div className="ticks"></div>
+      <main style={{ position: 'relative', zIndex: 1 }}>
+        <Hero
+          groomName={WEDDING_INFO.groomName}
+          brideName={WEDDING_INFO.brideName}
+          date={WEDDING_INFO.date}
+          venue={WEDDING_INFO.venue}
+        />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <Greeting text={WEDDING_INFO.greeting} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        <Countdown targetDate={WEDDING_INFO.targetDate} />
+
+        <Gallery photos={WEDDING_INFO.photos} />
+
+        <Location
+          venueName={WEDDING_INFO.venueName}
+          address={WEDDING_INFO.address}
+          transport={WEDDING_INFO.transport}
+          naverMapUrl={WEDDING_INFO.naverMapUrl}
+          kakaoMapUrl={WEDDING_INFO.kakaoMapUrl}
+        />
+
+        <AccountInfo accounts={WEDDING_INFO.accounts} />
+      </main>
+
+      <Footer
+        groomName={WEDDING_INFO.groomName}
+        brideName={WEDDING_INFO.brideName}
+        date={WEDDING_INFO.date}
+      />
     </>
-  )
+  );
 }
-
-export default App

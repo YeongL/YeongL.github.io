@@ -1,0 +1,38 @@
+.footer {
+  padding: 56px 24px 48px;
+  text-align: center;
+  background: linear-gradient(180deg, #FDFAF6 0%, #FAF4F7 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.floral {
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.names {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--rose);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.date {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.copy {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--rose-light);
+  letter-spacing: 0.1em;
+}

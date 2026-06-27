@@ -1,0 +1,41 @@
+.section {
+  padding: 64px 28px;
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.accent {
+  background: linear-gradient(180deg, #FAF4F7 0%, #FDFAF6 100%);
+}
+
+.titleWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.titleLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rose-light));
+  max-width: 60px;
+}
+
+.titleLine:last-child {
+  background: linear-gradient(90deg, var(--rose-light), transparent);
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  color: var(--rose);
+  white-space: nowrap;
+}

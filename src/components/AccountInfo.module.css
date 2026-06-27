@@ -1,0 +1,86 @@
+.desc {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border: 1px solid var(--rose-light);
+  border-radius: 14px;
+  padding: 16px 16px 16px 20px;
+  text-align: left;
+}
+
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.relation {
+  font-size: 0.68rem;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 300;
+  color: var(--rose);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.bank {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.account {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  letter-spacing: 0.05em;
+}
+
+.copyBtn {
+  background: var(--rose-light);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--rose);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  background: var(--rose);
+  color: white;
+}
+
+.copyBtn.copied {
+  background: var(--sage);
+  color: white;
+}

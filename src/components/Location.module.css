@@ -1,0 +1,116 @@
+.venueCard {
+  background: var(--white);
+  border: 1px solid var(--rose-light);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.pinIcon {
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.venueName {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.address {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.mapWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 200px;
+  border: none;
+  display: block;
+}
+
+.mapNote {
+  font-size: 0.65rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.mapBtns {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mapBtn {
+  flex: 1;
+  display: block;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 10px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.mapBtn:hover { opacity: 0.85; }
+
+.naver {
+  background: #03C75A;
+  color: white;
+}
+
+.kakao {
+  background: #FEE500;
+  color: #3B1D08;
+}
+
+.transport {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.transportItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--cream);
+  border-radius: 10px;
+  border-left: 3px solid var(--rose-light);
+}
+
+.transportType {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--rose);
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.transportDesc {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.7;
+}

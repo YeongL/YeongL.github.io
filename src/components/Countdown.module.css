@@ -1,0 +1,34 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--rose-light);
+  border-radius: 12px;
+  padding: 16px 12px 12px;
+  min-width: 64px;
+  box-shadow: 0 2px 12px rgba(200, 113, 138, 0.08);
+}
+
+.value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+}
