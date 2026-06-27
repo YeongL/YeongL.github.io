@@ -10,7 +10,7 @@ const NAVER_MAP = {
 };
 
 function NaverMap() {
-  const iframeSrc = `https://map.naver.com/p/entry/place/${NAVER_MAP.placeId}?embedMode=true`;
+  const iframeSrc = `https://map.naver.com/p/entry/place/${NAVER_MAP.placeId}`;
 
   return (
     <iframe
@@ -35,7 +35,7 @@ export default function Location({ venueName, address, transport, naverMapUrl, k
       </div>
 
       <div className={styles.mapWrap}>
-        <KakaoMap />
+        <NaverMap />
       </div>
 
       <div className={styles.mapBtns}>
