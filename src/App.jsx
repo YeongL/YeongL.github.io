@@ -119,7 +119,7 @@ export default function App() {
         <Countdown targetDate={WEDDING_INFO.targetDate} />
 
         <Contact contacts={WEDDING_INFO.contacts} />
-
+        <AccountInfo accounts={WEDDING_INFO.accounts} />
         <Gallery photos={WEDDING_INFO.photos} />
 
         <Location
@@ -130,7 +130,7 @@ export default function App() {
           kakaoMapUrl={WEDDING_INFO.kakaoMapUrl}
         />
 
-        <AccountInfo accounts={WEDDING_INFO.accounts} />
+        
         <Guestbook />
       </main>
       
