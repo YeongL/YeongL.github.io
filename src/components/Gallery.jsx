@@ -9,21 +9,40 @@ const PLACEHOLDER_COLORS = [
 ];
 
 export default function Gallery({ photos = [] }) {
-  const [active, setActive] = useState(null);
-
-  // photos가 없으면 플레이스홀더 표시
+  const [activeIndex, setActiveIndex] = useState(null);
+  
+  
   const items = photos.length > 0
     ? photos
     : PLACEHOLDER_COLORS.map((bg, i) => ({ id: i, bg }));
+  
+  const active =
+    activeIndex !== null ? items[activeIndex] : null;
+  // photos가 없으면 플레이스홀더 표시
+  
+  const prevPhoto = (e) => {
+    e.stopPropagation();
 
+    setActiveIndex((prev) =>
+      prev === 0 ? items.length - 1 : prev - 1
+    );
+  };
+
+  const nextPhoto = (e) => {
+    e.stopPropagation();
+
+    setActiveIndex((prev) =>
+      prev === items.length - 1 ? 0 : prev + 1
+    );
+  };
   return (
     <Section title="갤러리">
       <div className={styles.grid}>
         {items.map((item, i) => (
           <button
             key={item.id ?? i}
-            className={`${styles.cell} ${i === 0 || i === 3 ? styles.tall : ''}`}
-            onClick={() => setActive(item)}
+            className={styles.cell}
+            onClick={() => setActiveIndex(i)}
             aria-label={`사진 ${i + 1} 크게 보기`}
           >
             {item.src
@@ -41,12 +60,39 @@ export default function Gallery({ photos = [] }) {
       </div>
 
       {active && (
-        <div className={styles.lightbox} onClick={() => setActive(null)} role="dialog" aria-modal>
-          <button className={styles.closeBtn} onClick={() => setActive(null)} aria-label="닫기">✕</button>
-          {active.src
-            ? <img src={active.src} alt="" className={styles.lightboxImg} />
-            : <div className={styles.lightboxPlaceholder} style={{ background: active.bg }} />
-          }
+        <div className={styles.lightbox} onClick={() => setActiveIndex(null)} role="dialog" aria-modal>
+          <button 
+            className={styles.closeBtn} 
+            onClick={(e) => {
+              e.stopPropagation(); 
+              setActiveIndex(null);
+            }} aria-label="닫기">✕</button>
+          <button
+            className={styles.prevBtn}
+            onClick={prevPhoto}
+          >
+            ◀
+          </button>
+
+          {active.src ? (
+            <img
+              src={active.src}
+              alt=""
+              className={styles.lightboxImg}
+            />
+          ) : (
+            <div
+              className={styles.lightboxPlaceholder}
+              style={{ background: active.bg }}
+            />
+          )}
+
+          <button
+            className={styles.nextBtn}
+            onClick={nextPhoto}
+          >
+            ▶
+          </button>
         </div>
       )}
     </Section>

@@ -63,7 +63,14 @@ const WEDDING_INFO = {
 
   // 실제 사진 URL 배열 (없으면 플레이스홀더 표시)
   photos: [
-    // { id: 1, src: '/wedding-invitation/photos/1.jpg', alt: '웨딩 사진 1' },
+    { id: 1, src: '/public/photos/1.jpg', alt: '웨딩 사진 1' },
+    { id: 2, src: '/public/photos/2.jpg', alt: '웨딩 사진 2' },
+    { id: 3, src: '/public/photos/3.jpg', alt: '웨딩 사진 3' },
+    { id: 4, src: '/public/photos/4.jpg', alt: '웨딩 사진 4' },
+    { id: 5, src: '/public/photos/5.jpg', alt: '웨딩 사진 5' },
+    { id: 6, src: '/public/photos/6.jpg', alt: '웨딩 사진 6' },
+    { id: 7, src: '/public/photos/7.jpg', alt: '웨딩 사진 7' },
+    { id: 8, src: '/public/photos/8.jpg', alt: '웨딩 사진 8' }
   ],
   contacts: [
     {
