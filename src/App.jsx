@@ -53,7 +53,7 @@ const WEDDING_INFO = {
     {
       side: '신랑 측',
       people: [
-        { role: '신랑', name: '김태훈', bank: '카카오뱅크', account: '3333-01-1234567' },
+        { role: '신랑', name: '김태훈', bank: '국민은행', account: '109802-04-111221' },
         { role: '신랑 부', name: '김성주', bank: '국민은행', account: '109801-04-118854' },
         { role: '신랑 모', name: '고현아', bank: '국민은행', account: '564702-01-253222' },
       ],
