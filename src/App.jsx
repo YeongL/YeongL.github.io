@@ -16,7 +16,7 @@ import Contact from './components/Contact';
 const WEDDING_INFO = {
   groomName: '김태훈',
   brideName: '이민영',
-  date: '2026년 10월 18일 일요일 낮 12시 30분',
+  date: '2026년 10월 18일 일요일 오후 12시 30분',
   targetDate: '2026-10-18T12:30:00',
   venue: '성균관 컨벤션 3층 스토리홀',
 
@@ -30,7 +30,7 @@ const WEDDING_INFO = {
 이 종국 · 김 옥희의 장녀  민영`,
 
   venueName: '성균관 컨벤션',
-  address: '서울 종로구 성균관로 31 성균관컨벤션웨딩홀\n 3층 스토리홀',
+  address: '서울 종로구 성균관로 31\n성균관컨벤션웨딩홀 3층 스토리홀',
   naverMapUrl: 'https://naver.me/IMyAR0V0',  // 실제 URL로 교체
   kakaoMapUrl: 'https://place.map.kakao.com/913429074',  // 실제 URL로 교체
 
