@@ -16,7 +16,7 @@ import Contact from './components/Contact';
 const WEDDING_INFO = {
   groomName: '김태훈',
   brideName: '이민영',
-  date: '2026년 10월 18일 일요일 오후 12시 30분',
+  date: ['2026년 10월 18일 일요일','오후 12시 30분'],
   targetDate: '2026-10-18T12:30:00',
   venue: '성균관 컨벤션 3층 스토리홀',
 

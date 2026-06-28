@@ -21,7 +21,9 @@ export default function Hero({ groomName, brideName, date, venue }) {
           <span className={styles.dividerLine} />
         </div>
 
-        <time className={styles.date}>{date}</time>
+        <time className={styles.date}>
+          {date.join('\n')}
+        </time>
         <p className={styles.venue}>{venue}</p>
       </div>
 
