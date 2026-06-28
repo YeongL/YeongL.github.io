@@ -76,9 +76,9 @@ const WEDDING_INFO = {
     {
       side: '신랑 측',
       people: [
-        { role: '신랑', name: '김태훈', phone: '010-0000-0000' },
-        { role: '아버지', name: '김성주', phone: '010-0000-0000' },
-        { role: '어머니', name: '고현아', phone: '010-0000-0000' },
+        { role: '신랑', name: '김태훈', phone: '010-9054-9775' },
+        { role: '아버지', name: '김성주', phone: '010-3938-8705' },
+        { role: '어머니', name: '고현아', phone: '010-9396-9775' },
       ],
     },
     {

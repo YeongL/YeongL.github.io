@@ -46,6 +46,13 @@ photos: [
 ```
 `public/photos/` 폴더에 사진 파일을 넣으세요.
 
+
+### 인트로 배경사진 추가
+Hero.module.css의 .Hero의 background 교체
+기존값: 
+  background: linear-gradient(180deg, #FDFAF6 0%, #FAF4F7 100%);
+
+
 ### 지도 iframe 교체
 `src/components/Location.jsx`의 `<iframe src=...>` 부분을
 카카오맵/네이버 지도에서 공유 → embed 코드로 교체하세요.
@@ -72,5 +79,5 @@ src/
 ```
 
 
-
+로컬에서 테스트해보는거
 npm run dev
