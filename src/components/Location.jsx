@@ -9,19 +9,25 @@ const NAVER_MAP = {
   placeId: '11545666 ',  // ← 네이버 지도 장소 ID로 교체
 };
 
-function NaverMap() {
-  const iframeSrc = `https://map.naver.com/p/entry/place/${NAVER_MAP.placeId}`;
 
+function NaverMap() {
   return (
-    <iframe
-      src={iframeSrc}
-      style={{ width: '100%', height: '280px', border: 'none', borderRadius: '12px' }}
-      title="웨딩홀 지도"
-      loading="lazy"
-      allowFullScreen
-    />
+    <a
+      href="https://naver.me/IMyAR0V0"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ display: 'block', borderRadius: '12px', overflow: 'hidden' }}
+    >
+      <img
+        src="/map-preview.png"
+        alt="웨딩홀 지도"
+        style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }}
+      />
+    </a>
   );
 }
+
+
 export default function Location({ venueName, address, transport, naverMapUrl, kakaoMapUrl }) {
   return (
     <Section title="오시는 길" accent>

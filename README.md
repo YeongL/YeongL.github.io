@@ -70,3 +70,7 @@ src/
 ├── App.jsx
 └── index.css
 ```
+
+
+
+npm run dev
