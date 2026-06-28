@@ -62,7 +62,15 @@ export default function Location({ venueName, address, transport, naverMapUrl, k
           {transport.map((item) => (
             <div key={item.type} className={styles.transportItem}>
               <span className={styles.transportType}>{item.type}</span>
-              <span className={styles.transportDesc}>{item.desc}</span>
+              <span className={styles.transportDesc}>
+                {Array.isArray(item.desc)
+                  ? item.desc.map((line, i) => (
+                      <div key={i}>{line}</div>
+                    ))
+                  : item.desc.split('\n').map((line, i) => (
+                      <div key={i}>{line}</div>
+                    ))}
+              </span>
             </div>
           ))}
         </div>
