@@ -1,0 +1,231 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  background: var(--white);
+  border: 1px solid var(--rose-light);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.emojiRow {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.emojiBtn {
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.emojiBtn:hover { transform: scale(1.15); }
+
+.emojiSelected {
+  border-color: var(--rose);
+  background: var(--rose-light);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--rose-light);
+  border-radius: 10px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus { border-color: var(--rose); }
+
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--rose-light);
+  border-radius: 10px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  outline: none;
+  resize: none;
+  line-height: 1.8;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus { border-color: var(--rose); }
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--rose);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.submitBtn:disabled { opacity: 0.5; cursor: default; }
+.submitBtn.submitted { background: var(--sage); }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 420px;    /* 카드 약 3개 높이 */
+  overflow-y: auto;
+  padding-right: 4px;
+
+  /* 스크롤바 스타일 */
+  scrollbar-width: thin;
+  scrollbar-color: var(--rose-light) transparent;
+}
+
+/* 크롬용 스크롤바 */
+.list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--rose-light);
+  border-radius: 4px;
+}
+.empty {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--gray);
+  text-align: center;
+  padding: 24px 0;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--rose-light);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: left;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emoji { font-size: 1.1rem; line-height: 1; }
+
+.name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.date {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.deleteToggle {
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.deleteToggle:hover { opacity: 1; }
+
+.message {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.8;
+  word-break: keep-all;
+  white-space: pre-line;
+}
+
+.deleteRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rose-light);
+  animation: fadeDown 0.2s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pwInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--rose-light);
+  border-radius: 8px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  outline: none;
+  background: var(--cream);
+  transition: border-color 0.2s;
+}
+
+.pwInput:focus { border-color: var(--rose); }
+
+.pwInput.pwError {
+  border-color: #e05555;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.deleteBtn {
+  padding: 8px 16px;
+  background: #e05555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.deleteBtn:hover { opacity: 0.85; }

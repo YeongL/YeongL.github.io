@@ -7,6 +7,8 @@ import Location from './components/Location';
 import AccountInfo from './components/AccountInfo';
 import Footer from './components/Footer';
 import './index.css';
+import Guestbook from './components/Guestbook';
+import Contact from './components/Contact';
 
 // ====================================================
 // 여기에 실제 정보를 입력하세요
@@ -40,16 +42,48 @@ const WEDDING_INFO = {
   ],
 
   accounts: [
-    { relation: '신랑 측', name: '김태훈', bank: '카카오뱅크', account: '3333-01-1234567' },
-    { relation: '신랑 부', name: '김성주', bank: '국민은행', account: '123-456-7890123' },
-    { relation: '신부 측', name: '이민영', bank: '신한은행', account: '110-123-456789' },
-    { relation: '신부 모', name: '이종국', bank: '우리은행', account: '1002-123-456789' },
+    {
+      side: '신랑 측',
+      people: [
+        { role: '신랑', name: '김태훈', bank: '카카오뱅크', account: '3333-01-1234567' },
+        { role: '신랑 부', name: '김성주', bank: '국민은행', account: '123-456-7890123' },
+        { role: '신랑 모', name: '고현아', bank: '국민은행', account: '123-456-7890123' },
+      ],
+    },
+    {
+      side: '신부 측',
+      people: [
+        { role: '신부', name: '이민영', bank: '신한은행', account: '110-481-906510' },
+        { role: '신부 부', name: '이종국', bank: '신한은행', account: '110-123-456789' },
+        { role: '신부 모', name: '김옥희', bank: '우리은행', account: '1002-123-456789' },
+      ],
+    }
+    
   ],
 
   // 실제 사진 URL 배열 (없으면 플레이스홀더 표시)
   photos: [
     // { id: 1, src: '/wedding-invitation/photos/1.jpg', alt: '웨딩 사진 1' },
   ],
+  contacts: [
+    {
+      side: '신랑 측',
+      people: [
+        { role: '신랑', name: '김태훈', phone: '010-0000-0000' },
+        { role: '아버지', name: '김성주', phone: '010-0000-0000' },
+        { role: '어머니', name: '고현아', phone: '010-0000-0000' },
+      ],
+    },
+    {
+      side: '신부 측',
+      people: [
+        { role: '신부', name: '이민영', phone: '010-9166-7154' },
+        { role: '아버지', name: '이종국', phone: '010-3469-7154' },
+        { role: '어머니', name: '김옥희', phone: '010-9296-7154' },
+      ],
+    },
+  ],
+
 };
 
 export default function App() {
@@ -69,6 +103,8 @@ export default function App() {
 
         <Countdown targetDate={WEDDING_INFO.targetDate} />
 
+        <Contact contacts={WEDDING_INFO.contacts} />
+
         <Gallery photos={WEDDING_INFO.photos} />
 
         <Location
@@ -80,7 +116,9 @@ export default function App() {
         />
 
         <AccountInfo accounts={WEDDING_INFO.accounts} />
+        <Guestbook />
       </main>
+      
 
       <Footer
         groomName={WEDDING_INFO.groomName}

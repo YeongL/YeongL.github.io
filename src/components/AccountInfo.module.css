@@ -4,30 +4,82 @@
   font-weight: 300;
   color: var(--gray);
   line-height: 1.9;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.list {
+.groups {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(200, 113, 138, 0.06);
+  border: 1px solid var(--rose-light);
+  border-radius: 12px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-radius 0.2s;
+}
+
+.toggleBtn.active {
+  background: var(--rose-light);
+  color: var(--rose);
+  border-radius: 12px 12px 0 0;
+  border-bottom-color: transparent;
+}
+
+/* 슬라이드 애니메이션 */
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+  border: 1px solid var(--rose-light);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+}
+
+.content.open {
+  grid-template-rows: 1fr;
+}
+
+.list {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--white);
-  border: 1px solid var(--rose-light);
-  border-radius: 14px;
-  padding: 16px 16px 16px 20px;
-  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rose-light);
+}
+
+.card:last-child {
+  border-bottom: none;
 }
 
 .cardLeft {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  text-align: left;
 }
 
 .relation {
@@ -36,7 +88,6 @@
   font-weight: 300;
   color: var(--rose);
   letter-spacing: 0.08em;
-  margin-bottom: 2px;
 }
 
 .name {
@@ -67,7 +118,6 @@
   padding: 8px 14px;
   font-family: 'Noto Serif KR', serif;
   font-size: 0.75rem;
-  font-weight: 400;
   color: var(--rose);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
